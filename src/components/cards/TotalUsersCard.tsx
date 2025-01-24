@@ -2,7 +2,7 @@
 
 import Card from "./Card";
 import NumberGroup from "./sub-components/NumberGroup";
-import { useGetStats } from "@/app/hooks/useGetStats";
+import { useGetStats } from "../../hooks/useGetStats";
 import { useTimePeriod } from "@/lib/context/TimePeriodContext";
 import { getTimePeriodLabel } from "@/lib/utils/time";
 
