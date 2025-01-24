@@ -1,5 +1,3 @@
-"use client";
-
 import NumberFlow, { NumberFlowGroup, continuous } from "@number-flow/react";
 
 type Props = {

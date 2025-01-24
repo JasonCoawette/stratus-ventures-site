@@ -1,4 +1,4 @@
-import TotalUsersCard from "./components/cards/TotalUsersCard";
+import TotalUsersCard from "../components/cards/TotalUsersCard";
 
 export default function Dashboard() {
   return (

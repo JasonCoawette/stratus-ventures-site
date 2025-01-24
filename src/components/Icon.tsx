@@ -3,7 +3,7 @@ import {
     Activity, Database, Users, Calendar, 
     CreditCard, ListStart, CloudDownload,
     Image, LucideProps
-} from 'lucide-react';
+} from "lucide-react";
 
 // Define props for the Icon component, extending LucideProps
 interface IconProps extends LucideProps {
