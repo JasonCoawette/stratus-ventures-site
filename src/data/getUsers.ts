@@ -2,9 +2,7 @@
 // DATA GATEWAY FOR STRATUS VENTURES |||||||||||||||||||||||||||||||| //
 // ================================================================= //
 
-import Redis from 'ioredis';    
 import { fetchWebAppUserCount, fetchAppStoreUserCount} from './ dataSources/test/testDataSources';
-
 
 ///////////////////////////////////////////////////////////////////////
 // [===============================================================] //
