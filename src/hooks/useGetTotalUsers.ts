@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getUsers } from "@/data/getUsers";
 
 export function useGetTotalUsers() {
   const [totalUsers, setTotalUsers] = useState<number>(0);
@@ -6,9 +7,8 @@ export function useGetTotalUsers() {
   useEffect(() => {
     const fetchTotalUsers = async () => {
       try {
-        const response = await fetch('/api/total-users');
-        const data = await response.json();
-        setTotalUsers(data.totalUsers);
+        const response = await getUsers();
+        setTotalUsers(response);
       } catch (error) {
         console.error('Error fetching total users:', error);
       }
