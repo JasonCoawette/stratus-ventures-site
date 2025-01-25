@@ -14,11 +14,12 @@ export default function Auth() {
       <div
         className="
           relative flex flex-col
-          w-full max-w-md h-fit
+          w-full h-fit
           justify-center items-center
           gap-8
         "
       >
+
         {/* Header */}
         <div
           className="
@@ -41,7 +42,7 @@ export default function Auth() {
           <h1
             className="
               text-white text-6xl text-center
-              font-medium
+              font-medium 
               leading-tight tracking-tight
             "
           >
@@ -49,14 +50,23 @@ export default function Auth() {
           </h1>
         </div>
 
+        {/* Form Wrapper */}
+        <form
+          className ="
+            relateive flex flex-col
+            w-full max-w-sm h-fit
+            justify-center content-center
+            gap-4
+          "
+        >
+          {/* Email Input */}
 
-            {/* Email Input */}
+          <Button
+            label={"Send Code"}
+            className="w-full"
+          />
+        </form>
 
-            <Button
-              label={"Send Code"}
-              className="w-full"
-            />
-        
       </div>
     </main>
   );

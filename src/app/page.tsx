@@ -1,7 +1,7 @@
-import Auth from "./auth/page";
+import Dashboard from "./dashboard/page";
 
 export default function Root() {
   return (
-      <Auth />
+      <Dashboard />
   );
 }
