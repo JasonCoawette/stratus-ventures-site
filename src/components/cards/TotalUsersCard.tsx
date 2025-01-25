@@ -2,11 +2,11 @@
 
 import Card from "./Card";
 import NumberGroup from "./sub-components/NumberGroup";
-import { useTimePeriod } from "@/lib/context/TimePeriodContext";
-import { calculateChange } from "@/lib/utils/calculations";
+import { useTimePeriod } from "@/context/TimePeriodContext";
+import { calculateChange } from "@/utils/calculations";
 import { useGetTotalUsers } from "@/hooks/useGetTotalUsers";
 import { useState, useEffect } from "react";
-import { getTimePeriodLabel } from "@/lib/utils/time";
+import { getTimePeriodLabel } from "@/utils/time";
 
 export default function TotalUsersCard() {
 

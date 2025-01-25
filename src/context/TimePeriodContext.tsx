@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from 'react';
-import { TimePeriodValue, timePeriodLabels } from '@/lib/utils/time';
+import { TimePeriodValue, timePeriodLabels } from '@/utils/time';
 
 interface TimePeriodContextType {
  timePeriod: TimePeriodValue;

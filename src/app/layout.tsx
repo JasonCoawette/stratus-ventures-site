@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { TimePeriodProvider } from "../lib/context/TimePeriodContext";
+import { TimePeriodProvider } from "../context/TimePeriodContext";
 import "./styles/globals.css";
 
 
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: "Stratus Ventures",
   description: "We build cool software products.",
 };
-
 
 export default function RootLayout({
   children,
