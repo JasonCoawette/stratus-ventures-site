@@ -1,5 +1,3 @@
-"use client";
-
 import Card from "./Card";
 import NumberGroup from "./sub-components/NumberGroup";
 import { useTimePeriod } from "@/context/TimePeriodContext";
