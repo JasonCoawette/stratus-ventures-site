@@ -1,16 +1,7 @@
-import TotalUsersCard from "../components/cards/TotalUsersCard";
+import Auth from "./auth/page";
 
-
-
-export default function Dashboard() {
+export default function Root() {
   return (
-      <main className ="
-        relative flex flex-col
-        w-full h-full
-        justify-center items-center
-        p-4
-      ">
-        <TotalUsersCard />
-      </main>
+      <Auth />
   );
 }

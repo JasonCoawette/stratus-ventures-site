@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./styles/globals.css";
 import { TimePeriodProvider } from "../lib/context/TimePeriodContext";
+import "./styles/globals.css";
 
 
 const geistSans = Geist({
@@ -34,6 +34,7 @@ export default function RootLayout({
           ${geistSans.variable} ${geistMono.variable}
           bg-neutral-950
           tracking-tight antialiased
+          h-screen
         `}
       >
         <TimePeriodProvider>
