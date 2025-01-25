@@ -35,7 +35,7 @@ export default function Auth() {
               leading-none tracking-widest
             "
           >
-            [ADMIN LOGIN]
+            {"[ADMIN LOGIN]"}
           </h3>
 
           <h1
