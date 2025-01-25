@@ -10,7 +10,6 @@ import { fetchWebAppUserCount, fetchAppStoreUserCount} from './ dataSources/test
 // [===============================================================] //
 
     export const getUsers = async (): Promise<number> => {
-        const cacheKey = 'total_users';
   
         // ----------------------------- ::
         // [ DATA SOURCES |||||||||||||] ::
