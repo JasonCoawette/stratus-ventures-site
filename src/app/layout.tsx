@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { TimePeriodProvider } from "../context/TimePeriodContext";
 import "./styles/globals.css";
 
 
@@ -36,9 +35,7 @@ export default function RootLayout({
           h-screen
         `}
       >
-        <TimePeriodProvider>
-          {children}         
-        </TimePeriodProvider>
+        {children}         
       </body>
     </html>
   );
