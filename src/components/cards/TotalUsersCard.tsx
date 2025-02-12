@@ -9,8 +9,8 @@ export default function TotalUsersCard() {
             title="Total Users"
             className="
                 relative
-                w-full h-fit
-                justify-center items-start
+                w-full h-full
+                justify-start items-start
                 gap-1
             "
         >

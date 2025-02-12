@@ -1,73 +1,118 @@
+import { NumberFlowGroup } from "@number-flow/react";
 import Card from "./Card";
 import NumberFlow, { continuous } from "@number-flow/react";
 
 export default function CashFlowCard() {
-    const formatNumber = (value: number) => {
-        if (Math.abs(value) >= 10000000) {
-            return {
-                style: 'currency' as const,
-                currency: 'USD',
-                maximumFractionDigits: 2,
-                signDisplay: 'always' as const,
-                notation: 'compact' as const,
-                compactDisplay: 'short' as const
-            };
-        }
-        return {
-            style: 'currency' as const,
-            currency: 'USD',
-            maximumFractionDigits: 2,
-            signDisplay: 'always' as const
-        };
-    };
+    const formatNumberMobile = (value: number) => ({
+        style: 'currency' as const,
+        currency: 'USD',
+        maximumFractionDigits: 2,
+        signDisplay: 'always' as const,
+        notation: 'compact' as const,
+        compactDisplay: 'short' as const
+    });
+
+    const formatNumberDesktop = (value: number) => ({
+        style: 'currency' as const,
+        currency: 'USD',
+        maximumFractionDigits: 2,
+        signDisplay: 'always' as const
+    });
 
     return (
         <Card 
             title="Cash Flow"
             className="
-                w-full h-fit
+                w-full h-full
                 justify-start items-start
+                gap-1
             "
         >
-            <div className="
-                relative
-                flex flex-row 
-                w-full h-fit 
-                justify-start items-center
-                gap-4
-            "> 
-                <NumberFlow 
-                    value={100000000} 
-                    locales="en-US"
-                    format={formatNumber(100000000)}
-                    trend={0}
-                    plugins={[continuous]}
+            <NumberFlowGroup>
+                <div
+                    style={{
+                        ['--number-flow-char-height' as string]: '1em',
+                        ['--number-flow-mask-height' as string]: '0em',
+                        ['--number-flow-mask-width' as string]: '0em'
+                    }}
                     className="
-                        w-fit h-fit 
-                        text-5xl text-green-500 text-start  
-                        leading-none
-                        tracking-tighter
-                        font-normal
+                        relative flex flex-row
+                        w-fit h-fit
+                        justify-start items-start
+                        gap-4
                     "
-                />
+                >
+                    {/* Mobile version */}
+                    <NumberFlow 
+                        value={100000000} 
+                        locales="en-US"
+                        format={formatNumberMobile(100000000)}
+                        trend={0}
+                        plugins={[continuous]}
+                        className="
+                            md:hidden
+                            w-fit h-fit 
+                            text-5xl text-green-500 text-start  
+                            leading-none
+                            tracking-tighter
+                            font-normal
+                        "
+                    />
 
-                <NumberFlow 
-                    value={-1000000} 
-                    locales="en-US"
-                    format={formatNumber(-1000000)}
-                    trend={0}
-                    plugins={[continuous]}
-                    className="
-                        w-fit h-fit 
-                        text-5xl text-red-500 text-start  
-                        leading-none
-                        tracking-tighter
-                        font-normal
-                    "
-                />
-            </div>
+                    {/* Desktop version */}
+                    <NumberFlow 
+                        value={100000000} 
+                        locales="en-US"
+                        format={formatNumberDesktop(100000000)}
+                        trend={0}
+                        plugins={[continuous]}
+                        className="
+                            hidden md:block
+                            w-fit h-fit 
+                            text-5xl text-green-500 text-start  
+                            leading-none
+                            tracking-tighter
+                            font-normal
+                        "
+                    />
 
-            <div className="flex flex-row w-full h-fit justify-start items-center gap-2"> 
+                    {/* Mobile version */}
+                    <NumberFlow 
+                        value={-1000000} 
+                        locales="en-US"
+                        format={formatNumberMobile(-1000000)}
+                        trend={0}
+                        plugins={[continuous]}
+                        className="
+                            md:hidden
+                            w-fit h-fit 
+                            text-5xl text-red-500 text-start  
+                            leading-none
+                            tracking-tighter
+                            font-normal
+                        "
+                    />
+
+                    {/* Desktop version */}
+                    <NumberFlow 
+                        value={-1000000} 
+                        locales="en-US"
+                        format={formatNumberDesktop(-1000000)}
+                        trend={0}
+                        plugins={[continuous]}
+                        className="
+                            hidden md:block
+                            w-fit h-fit 
+                            text-5xl text-red-500 text-start  
+                            leading-none
+                            tracking-tighter
+                            font-normal
+                        "
+                    />
+                </div>
+            </NumberFlowGroup>
+
+            <div className="flex flex-row w-full h-fit justify-start items-center gap-2 mt-2"> 
                 <span className="text-md text-slate-400 font-medium leading-none">Total revenue:</span>
                 <span className="text-md text-slate-200 font-medium font-mono">{"$100,000,000"}</span>
             </div>

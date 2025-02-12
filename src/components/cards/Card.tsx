@@ -5,9 +5,10 @@ type Props = {
     title: string
     children: React.ReactNode;
     className?: string;
+    headerContent?: React.ReactNode;
 }
 
-export default function Card({title, children, className}: Props) {
+export default function Card({title, children, className, headerContent}: Props) {
     return (
         <section className={cn(
             "card",
@@ -31,7 +32,11 @@ export default function Card({title, children, className}: Props) {
                     leading-none tracking-tight
                 ">{title}</h2>
 
-                <Icon variant={title} size={28} color={"#64748b"}/>
+
+                <div className="flex flex-row gap-4">
+                    {headerContent}
+                    <Icon variant={title} size={28} color={"#64748b"}/>
+                </div>
             </div>
 
             {/* Children content */}

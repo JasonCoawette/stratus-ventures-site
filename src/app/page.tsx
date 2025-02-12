@@ -57,15 +57,15 @@ export default function Dashboard() {
                 {/* CashFlow and Daily Active Users */}
                 <div className="
                     flex flex-row
-                    w-full h-fit
-                    justify-center items-start
+                    w-full h-full
+                    justify-center items-stretch
                     gap-4
                 ">
-                    <div className="flex-1 basis-[36%] min-w-[18rem]">
+                    <div className="min-w-[18rem] w-full h-full">
                         <CashFlowCard />
                     </div>
 
-                    <div className="flex-1 basis-[64%] min-w-[18rem]">
+                    <div className="min-w-[18rem] w-full h-full">
                         <DailyActiveUsersCard />
                     </div>
                 </div>
@@ -73,8 +73,8 @@ export default function Dashboard() {
                 {/* Total Users */}
                 <div className="
                     flex flex-col
-                    basis-1/4 max-w-[48rem] min-w-[18rem] h-fit
-                    justify-start items-center
+                    basis-1/4 max-w-[48rem] min-w-[18rem] h-full
+                    justify-start items-start
                 ">
                     <TotalUsersCard />
                 </div>
