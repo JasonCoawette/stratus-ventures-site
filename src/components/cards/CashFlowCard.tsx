@@ -3,7 +3,7 @@ import Card from "./Card";
 import NumberFlow, { continuous } from "@number-flow/react";
 
 export default function CashFlowCard() {
-    const formatNumberMobile = (value: number) => ({
+    const formatNumberMobile = () => ({
         style: 'currency' as const,
         currency: 'USD',
         maximumFractionDigits: 2,
@@ -12,7 +12,7 @@ export default function CashFlowCard() {
         compactDisplay: 'short' as const
     });
 
-    const formatNumberDesktop = (value: number) => ({
+    const formatNumberDesktop = () => ({
         style: 'currency' as const,
         currency: 'USD',
         maximumFractionDigits: 2,
@@ -46,7 +46,7 @@ export default function CashFlowCard() {
                     <NumberFlow 
                         value={100000000} 
                         locales="en-US"
-                        format={formatNumberMobile(100000000)}
+                        format={formatNumberMobile()}
                         trend={0}
                         plugins={[continuous]}
                         className="
@@ -63,7 +63,7 @@ export default function CashFlowCard() {
                     <NumberFlow 
                         value={100000000} 
                         locales="en-US"
-                        format={formatNumberDesktop(100000000)}
+                        format={formatNumberDesktop()}
                         trend={0}
                         plugins={[continuous]}
                         className="
@@ -80,7 +80,7 @@ export default function CashFlowCard() {
                     <NumberFlow 
                         value={-1000000} 
                         locales="en-US"
-                        format={formatNumberMobile(-1000000)}
+                        format={formatNumberMobile()}
                         trend={0}
                         plugins={[continuous]}
                         className="
@@ -97,7 +97,7 @@ export default function CashFlowCard() {
                     <NumberFlow 
                         value={-1000000} 
                         locales="en-US"
-                        format={formatNumberDesktop(-1000000)}
+                        format={formatNumberDesktop()}
                         trend={0}
                         plugins={[continuous]}
                         className="

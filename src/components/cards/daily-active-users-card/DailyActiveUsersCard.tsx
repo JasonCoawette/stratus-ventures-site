@@ -8,16 +8,10 @@ export default function DailyActiveUsersCard() {
     const daysInYear = useDaysInYear(year);
     const levels = [0, 0.25, 0.5, 0.75, 1];
 
-    const months = ["Jan-Feb", "Mar-Apr", "May-Jun", "Jul-Aug", "Sep-Oct", "Nov-Dec"];
-
     return (
         <Card 
             title="Daily Active Users"
-            className="
-                w-full h-full
-                justify-start items-start
-                gap-3
-            "
+            className="w-full h-full justify-start items-start gap-3"
             headerContent={<CellLegend levels={levels} />}
         >
             <ContributionGraph daysInYear={daysInYear} levels={levels} />
