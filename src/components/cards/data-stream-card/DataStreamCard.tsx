@@ -82,12 +82,12 @@ export default function DataStreamCard() {
     return (
         <Card 
             title="Data Stream" 
-            className="w-full h-[calc(100vh-14rem)] min-h-0 flex flex-col"
+            className="w-full h-[calc(100vh-14rem)] min-h-0 flex flex-col gap-2"
         >
             <div className="flex flex-col w-full h-full min-h-0">
                 {/* Header */}
                 <div className="flex flex-row w-full justify-between items-center shrink-0">
-                    <h4 className="text-slate-400 text-md font-medium">Real time</h4>
+                    <h4 className="text-slate-400 text-md font-medium">Version: 1.0.01 </h4>
                     <LiveIndicator />
                 </div>
 

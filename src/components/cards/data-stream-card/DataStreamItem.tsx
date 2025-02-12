@@ -24,7 +24,7 @@ export default function DataStreamItem({ timeStamp, user, product, type }: DataS
             </p>
 
             {/* Event line */}
-            <div className="flex flex-row w-full h-fit justify-start items-center gap-3">
+            <div className="flex flex-row w-full h-fit justify-start items-start gap-3">
                 <p className="text-slate-600 text-sm font-mono">Event:</p>
                 <p className={`${eventColors[type]} text-sm font-semibold font-mono`}>
                 {type === "Live Download Event" ? "Download" : 
@@ -36,7 +36,7 @@ export default function DataStreamItem({ timeStamp, user, product, type }: DataS
             </div>
 
             {/* Product line */}
-            <div className="flex flex-row w-full h-fit justify-start items-center gap-3">
+            <div className="flex flex-row w-full h-fit justify-start items-start gap-3">
                 <p className="text-slate-600 text-sm font-mono">Product:</p>
                 <p className="text-slate-400 text-sm font-mono font-medium">{product}</p>
             </div>
