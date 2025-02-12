@@ -30,7 +30,7 @@ export default function RootLayout({
         className=
         {`
           ${geistSans.variable} ${geistMono.variable}
-          bg-neutral-950
+          bg-slate-950
           tracking-tight antialiased
           h-screen
         `}

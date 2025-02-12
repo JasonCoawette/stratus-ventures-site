@@ -2,7 +2,9 @@ import {
     Earth, Filter, MonitorSmartphone, 
     Activity, Database, Users, Calendar, 
     CreditCard, ListStart, CloudDownload,
-    Image, LucideProps
+    Image, LucideProps,
+    ArrowUpRight,
+    Eye
 } from "lucide-react";
 
 // Define props for the Icon component, extending LucideProps
@@ -22,6 +24,8 @@ const iconMap: Record<string, React.FC<LucideProps>> = {
   "Live Download Event": CloudDownload,
   "In-App Purchase": CreditCard,
   "New Rating or Review": ListStart,
+  "View": Eye,
+  "Conversion": ArrowUpRight,
 };
 
 // Icon component definition

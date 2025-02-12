@@ -6,7 +6,7 @@ export default function TotalUsersCard() {
 
     return (
         <Card 
-            title="Total Users"
+            title="Downloads"
             className="
                 relative
                 w-full h-fit
@@ -15,7 +15,7 @@ export default function TotalUsersCard() {
             "
         >
             <NumberGroup 
-                value={10000}
+                value={100000}
                 change={100}
                 timePeriod={"Today so far"}
             />

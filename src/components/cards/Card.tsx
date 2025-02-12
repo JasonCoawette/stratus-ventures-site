@@ -1,21 +1,22 @@
-import Icon from "../Icon";
+import { cn } from "@/lib/utils";
+import Icon from "./sub-components/Icon";
 
 type Props = {
     title: string
     children: React.ReactNode;
+    className?: string;
 }
 
-export default function Card({title, children}: Props) {
+export default function Card({title, children, className}: Props) {
     return (
-        <section className="
-            card
-            relative flex flex-col
-            w-full h-fit
-            justify-center items-center
-            p-4 gap-2
-            bg-neutral-900
-            border border-neutral-800 rounded-lg 
-        ">
+        <section className={cn(
+            "card",
+            "relative flex flex-col",
+            "p-4",
+            "bg-slate-900",
+            "border border-slate-800 rounded-lg",
+            className
+        )}>
 
             {/* Title and Icon */}
             <div className="
@@ -30,7 +31,7 @@ export default function Card({title, children}: Props) {
                     leading-none tracking-tight
                 ">{title}</h2>
 
-                <Icon variant={title} size={28} color={"#666666"}/>
+                <Icon variant={title} size={28} color={"#64748b"}/>
             </div>
 
             {/* Children content */}
