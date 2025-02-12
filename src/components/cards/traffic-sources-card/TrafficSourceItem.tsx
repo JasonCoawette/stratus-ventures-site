@@ -44,8 +44,8 @@ export default function TrafficSourceItem({url, viewCount, conversionRate, topPr
                     justify-between items-center
                     gap-1
                 "> 
-                    <span className="text-slate-400 text-sm font-medium">Top:</span>
-                    <span className="text-white text-sm font-medium">{topProduct}</span>
+                    <span className="text-slate-600 text-sm font-medium">Top:</span>
+                    <span className="text-slate-400 text-sm font-medium">{topProduct}</span>
                 </div>
 
             </div>
