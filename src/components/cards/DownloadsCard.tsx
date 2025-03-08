@@ -15,7 +15,7 @@ export default function TotalUsersCard() {
             "
         >
             <NumberGroup 
-                value={100000}
+                value={1000000}
                 change={100}
                 timePeriod={"Today so far"}
             />

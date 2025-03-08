@@ -2,14 +2,14 @@ type DataStreamItemProps = {
     timeStamp: string;
     user: string;
     product: string;
-    type: "Live Download Event" | "In-App Purchase" | "New Rating or Review";
+    type: "LiveDownloadEvent" | "In-AppPurchase" | "NewRatingReview";
 };
 
 export default function DataStreamItem({ timeStamp, user, product, type }: DataStreamItemProps) {
     const eventColors: Record<string, string> = {
-        "Live Download Event": "text-sky-500",
-        "In-App Purchase": "text-green-500",
-        "New Rating or Review": "text-fuchsia-500"
+        "LiveDownloadEvent": "text-sky-500",
+        "In-AppPurchase": "text-green-500",
+        "NewRatingReview": "text-fuchsia-500"
     };
 
     const formattedTime = new Date(timeStamp)
@@ -25,11 +25,12 @@ export default function DataStreamItem({ timeStamp, user, product, type }: DataS
 
             {/* Event line */}
             <div className="flex flex-row w-full h-fit justify-start items-start gap-3">
-                <p className="text-slate-600 text-sm font-mono">Event:</p>
+
+                <p className="lg:visible hidden text-slate-600 text-sm font-mono">Event:</p>
                 <p className={`${eventColors[type]} text-sm font-semibold font-mono`}>
-                {type === "Live Download Event" ? "Download" : 
-                    type === "In-App Purchase" ? "In-App Purchase" : 
-                    "New Rating or Review"}
+                {type === "LiveDownloadEvent" ? "LiveDownloadEvent" : 
+                    type === "In-AppPurchase" ? "In-AppPurchase" : 
+                    type === "NewRatingReview" ? "NewRatingReview" : "Unknown"}
                 </p>
                 <p className="text-slate-600 text-sm font-mono">from</p>
                 <p className="text-slate-400 text-sm font-mono font-medium">{user}</p>

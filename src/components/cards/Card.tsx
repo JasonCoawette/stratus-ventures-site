@@ -30,6 +30,7 @@ export default function Card({title, children, className, headerContent}: Props)
                     text-white
                     font-semibold
                     leading-none tracking-tight
+                    z-10
                 ">{title}</h2>
 
 

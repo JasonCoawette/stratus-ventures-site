@@ -18,7 +18,7 @@ export default function Dashboard() {
         ">
             {/* Top Row */}
             <div className="
-                flex flex-row
+                flex flex-col lg:flex-row
                 w-full h-full
                 justify-center items-start
                 gap-4
@@ -49,14 +49,14 @@ export default function Dashboard() {
 
             {/* Bottom Row */}
             <div className="
-                flex flex-row
+                flex flex-col lg:flex-row
                 w-full h-fit
                 justify-start items-start
                 gap-4
             ">
                 {/* CashFlow and Daily Active Users */}
                 <div className="
-                    flex flex-row
+                    flex flex-col lg:flex-row
                     w-full h-full
                     justify-center items-stretch
                     gap-4

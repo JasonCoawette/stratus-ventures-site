@@ -14,7 +14,7 @@ export default function ActiveSessionsCard() {
                 gap-1
             "
         >
-            <div className="flex flex-col gap-8">
+            <div className="relative flex flex-col gap-8 z-10">
                 <NumberGroup
                     value={100000}
                     change={100}
@@ -59,8 +59,6 @@ export default function ActiveSessionsCard() {
                 </div>
             </div>
 
-
-            {/* GLOBE IN THE BACK ABSOLUTLEY POSITIONED ? */}
         </Card>
     );
 }

@@ -32,7 +32,7 @@ export default function RootLayout({
           ${geistSans.variable} ${geistMono.variable}
           bg-slate-950
           tracking-tight antialiased
-          h-screen
+          h-fit lg:h-screen
         `}
       >
         {children}         

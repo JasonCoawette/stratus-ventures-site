@@ -43,7 +43,7 @@ export default function NumberGroup({value, change, timePeriod}: Props) {
                         w-fit h-fit 
                         text-6xl text-white text-start
                         leading-none
-                        tracking-tighter
+                        tracking-tight
                         font-normal
                     "
                 />

@@ -50,11 +50,11 @@ export default function CashFlowCard() {
                         trend={0}
                         plugins={[continuous]}
                         className="
-                            md:hidden
+                            visible
                             w-fit h-fit 
                             text-5xl text-green-500 text-start  
                             leading-none
-                            tracking-tighter
+                            tracking-tight
                             font-normal
                         "
                     />
@@ -67,11 +67,11 @@ export default function CashFlowCard() {
                         trend={0}
                         plugins={[continuous]}
                         className="
-                            hidden md:block
+                            lg:visible hidden
                             w-fit h-fit 
                             text-5xl text-green-500 text-start  
                             leading-none
-                            tracking-tighter
+                            tracking-tight
                             font-normal
                         "
                     />
@@ -84,11 +84,11 @@ export default function CashFlowCard() {
                         trend={0}
                         plugins={[continuous]}
                         className="
-                            md:hidden
+                            visible
                             w-fit h-fit 
                             text-5xl text-red-500 text-start  
                             leading-none
-                            tracking-tighter
+                            tracking-tight
                             font-normal
                         "
                     />
@@ -101,11 +101,11 @@ export default function CashFlowCard() {
                         trend={0}
                         plugins={[continuous]}
                         className="
-                            hidden md:block
+                            lg:visible hidden
                             w-fit h-fit 
                             text-5xl text-red-500 text-start  
                             leading-none
-                            tracking-tighter
+                            tracking-tight
                             font-normal
                         "
                     />

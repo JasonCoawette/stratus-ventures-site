@@ -9,73 +9,73 @@ export default function DataStreamCard() {
             timeStamp: "2024-03-24T21:01:32.000Z",  // ISO format that we'll format in the item
             user: "user123",
             product: "Product A",
-            type: "Live Download Event" as const
+            type: "LiveDownloadEvent" as const
         },
         {
             timeStamp: "2024-03-24T21:01:33.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
         {
             timeStamp: "2024-03-24T21:01:34.000Z",
             user: "user789",
             product: "Product C",
-            type: "New Rating or Review" as const
+            type: "NewRatingReview" as const
         },
         {
             timeStamp: "2024-03-24T21:01:35.000Z",
             user: "user123",
             product: "Product A",
-            type: "Live Download Event" as const
+            type: "LiveDownloadEvent" as const
         },
         {
             timeStamp: "2024-03-24T21:01:36.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
         {
             timeStamp: "2024-03-24T21:01:37.000Z",
             user: "user789",
             product: "Product C",
-            type: "New Rating or Review" as const
+            type: "NewRatingReview" as const
         },
         {
             timeStamp: "2024-03-24T21:01:32.000Z",  // ISO format that we'll format in the item
             user: "user123",
             product: "Product A",
-            type: "Live Download Event" as const
+            type: "LiveDownloadEvent" as const
         },
         {
             timeStamp: "2024-03-24T21:01:33.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
         {
             timeStamp: "2024-03-24T21:01:34.000Z",
             user: "user789",
             product: "Product C",
-            type: "New Rating or Review" as const
+            type: "NewRatingReview" as const
         },
         {
             timeStamp: "2024-03-24T21:01:36.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
         {
             timeStamp: "2024-03-24T21:01:36.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
         {
             timeStamp: "2024-03-24T21:01:36.000Z",
             user: "user456",
             product: "Product B",
-            type: "In-App Purchase" as const
+            type: "In-AppPurchase" as const
         },
     ];
 
