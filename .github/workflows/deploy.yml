@@ -2,33 +2,44 @@ name: Deploy SvelteKit to GitHub Pages
 
 on:
   push:
-    branches: ['main']
-  workflow_dispatch:
+    branches: ['main']   # redeploy every push to main
+  workflow_dispatch:     # allow manual runs
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣  Pull the repo
       - uses: actions/checkout@v4
 
-      - name: Setup Node & Yarn 4
+      # 2️⃣  Install Node 20 and prime the Yarn cache
+      - name: Setup Node and Yarn cache
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: yarn
 
-      - name: Enable Corepack & install deps
+      # 3️⃣  Enable Corepack and activate Yarn 4
+      - name: Activate Yarn 4
         run: |
           corepack enable
-          yarn install --immutable
+          corepack prepare yarn@4.9.2 --activate   # pin to the same Yarn you use locally
+          yarn --version                            # sanity check → 4.9.2
 
+      # 4️⃣  Install dependencies (respects nodeLinker: node-modules)
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      # 5️⃣  Build the static site (adapter-static ➜ ./build)
       - name: Build the static site
-        run: yarn build         # outputs to ./build
+        run: yarn build
 
+      # 6️⃣  Upload the build folder as the Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build           # must match output dir
+          path: build
 
   deploy:
     needs: build
@@ -36,6 +47,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+
     steps:
       - id: deployment
         name: Deploy to GitHub Pages
