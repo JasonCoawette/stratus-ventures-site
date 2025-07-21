@@ -1,10 +1,10 @@
-<script lang="ts">
-	import '../app.css';
+<script context="module" lang="ts">
 	export const prerender = true;
 	export const trailingSlash = 'always';
-
-	let { children } = $props();
-
 </script>
 
-{@render children()}
+<script lang="ts">
+	import '../app.css';
+</script>
+
+<slot />
