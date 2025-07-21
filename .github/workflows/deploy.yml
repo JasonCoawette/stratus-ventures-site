@@ -31,10 +31,7 @@ jobs:
       # 4. Try immutable install, fallback if needed
       - name: Install dependencies (try immutable)
         run: |
-          yarn install --immutable || (
-            echo "⚠️ Lockfile mismatch — falling back to normal install"
-            yarn install
-          )
+          yarn install
 
       # 5. Generate SvelteKit types
       - name: Generate SvelteKit types
