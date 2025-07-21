@@ -1,6 +1,7 @@
 # .github/workflows/deploy.yml
 name: Deploy SvelteKit to GitHub Pages
 
+
 on:
   push:
     branches: [main]        # redeploy every push to main
