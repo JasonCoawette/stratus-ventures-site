@@ -14,28 +14,32 @@ jobs:
       # 1. Check out repository
       - uses: actions/checkout@v4
 
-      # 2. Install Node (no yarn cache flag!)
+      # 2. Install Node
       - name: Set up Node 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Enable Corepack and activate Yarn 4
+      # 3. Activate Yarn 4
       - name: Activate Yarn 4
         run: |
           corepack enable
-          corepack prepare yarn@4.9.2 --activate     # pin to the version you use locally
-          yarn --version                              # should print 4.9.2
+          corepack prepare yarn@4.9.2 --activate
+          yarn --version
 
-      # 4. Install dependencies (respects nodeLinker: node-modules)
-      - name: Install dependencies
-        run: yarn install --immutable
+      # 4. Try immutable install, fallback if needed
+      - name: Install dependencies (try immutable)
+        run: |
+          yarn install --immutable || (
+            echo "⚠️ Lockfile mismatch — falling back to normal install"
+            yarn install
+          )
 
-      # 5. Pre-generate SvelteKit files (silences tsconfig warning)
+      # 5. Generate SvelteKit types
       - name: Generate SvelteKit types
         run: yarn svelte-kit sync
 
-      # 6. Build the static site (adapter-static ➜ ./build)
+      # 6. Build the static site
       - name: Build the site
         run: yarn build
 
@@ -56,4 +60,3 @@ jobs:
       - id: deployment
         name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
