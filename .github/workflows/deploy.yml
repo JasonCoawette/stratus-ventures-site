@@ -1,11 +1,10 @@
 # .github/workflows/deploy.yml
 name: Deploy SvelteKit to GitHub Pages
 
-
 on:
   push:
-    branches: [main]        # redeploy every push to main
-  workflow_dispatch:        # allow manual trigger
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,23 +14,22 @@ jobs:
       # 1. Check out repository
       - uses: actions/checkout@v4
 
-      # 2. Install Node
-      - name: Set up Node 20
+      # 2. Set up Node and Yarn Classic
+      - name: Set up Node 20 and Yarn Classic
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'yarn'
 
-      # 3. Activate Yarn 4
-      - name: Activate Yarn 4
+      # 3. Install Yarn Classic manually (latest 1.x)
+      - name: Install Yarn Classic
         run: |
-          corepack enable
-          corepack prepare yarn@4.9.2 --activate
-          yarn --version
+          npm install -g yarn
+          yarn --version  # should print 1.x.x
 
-      # 4. Try immutable install, fallback if needed
-      - name: Install dependencies (try immutable)
-        run: |
-          yarn install
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: yarn install
 
       # 5. Generate SvelteKit types
       - name: Generate SvelteKit types
