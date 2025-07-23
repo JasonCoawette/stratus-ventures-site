@@ -1,1 +1,159 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Geist", system-ui, sans-serif;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* FONT STYLES ----- */
+/* ----------------- */
+
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+
+/* TYPOGRAPHY STYLES */
+/* ----------------- */
+
+@layer components {
+    .heading-1 {
+        @apply font-display text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tight;
+    }
+
+    .button-label {
+        @apply font-sans font-semibold text-sm md:text-base leading-tight tracking-tight;
+    }
+
+    .span-title {
+        @apply font-sans font-semibold text-sm md:text-base leading-tight tracking-tight;
+    }
+
+    .span-tag {
+        @apply font-sans font-normal text-sm md:text-base leading-tight tracking-tight;
+    }
+
+    .paragraph {
+        @apply font-sans font-normal text-sm md:text-base leading-tight tracking-tight;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+/* LINK STYLES ----- */
+/* ----------------- */
+
+.link-underline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+    
+.link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+    
+.link-underline:hover::after {
+    transform: scaleX(1);
+}
+
+@layer components {
+    .link-text {
+        @apply font-sans text-sm md:text-base leading-tight tracking-tight;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .link-text::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .link-text:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+/* COLOR STYLES ---- */
+/* ----------------- */
+
+@layer components {
+    .primary-fg {
+        @apply text-neutral-950 dark:text-neutral-50;
+    }
+
+    .primary-bg {
+        @apply bg-white dark:bg-neutral-900;
+    }
+
+    .secondary-fg {
+        @apply text-neutral-400 dark:text-neutral-300 fill-neutral-400 dark:fill-neutral-300;
+    }
+
+    .button-default {
+        @apply bg-neutral-950 dark:bg-neutral-50 hover:opacity-80 transition duration-300 ease-in-out;
+        @apply text-white dark:text-black;
+    }
+
+    .button-outlined {
+        @apply bg-transparent border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50/50 dark:hover:bg-neutral-800 transition duration-300 ease-in-out;
+    }
+
+    .border-fg {
+        @apply border-neutral-200 dark:border-neutral-700;
+    }
+
+    .bg-gradient-overlay {
+        background: linear-gradient(180deg, var(--color-white) 0%, var(--color-white) 80%, transparent 100%);
+    }
+
+    .dark .bg-gradient-overlay {
+        background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-900) 80%, transparent 100%);
+    }
+}
+
+
