@@ -20,13 +20,11 @@
         ">
             <div class="
                 flex flex-col justify-start items-start w-full h-fit min-w-2xs
-                lg:min-w-xl pt-4 sm:pt-0 gap-4 sm:gap-6 backdrop-blur-xl sm:backdrop-blur-none 
-                bg-gradient-overlay sm:bg-none
-                order-2 md:order-1
+                lg:min-w-xl pt-4 sm:pt-0 gap-4 sm:gap-6 order-2 md:order-1
             ">
                 <h1 class="heading-1 primary-fg">Stratus</h1>
                 <p class="paragraph primary-fg">
-                    Stratus Ventures LLC owns and leads a group of product-focused ventures founded by
+                    Stratus Ventures LLC owns a group of product-focused ventures founded by
                     <Link href="https://x.com/jasoncoawette" label="Jason Coawette"/>
                     and is located in Phoenix, Arizona.
                 </p>

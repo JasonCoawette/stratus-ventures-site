@@ -10,13 +10,14 @@
 
 /* LIGHT MODE */
 :root {
-    --color-primary: 23 23 23;      /* neutral-950 */
-    --color-primary-bg: 255 255 255; /* white */
-    --color-secondary: 163 163 163;  /* neutral-400 */
-    --color-border: 229 229 229;     /* neutral-200 */
-    --color-button-bg: 23 23 23;     /* neutral-950 */
+    --color-primary: 23 23 23;        /* neutral-950 */
+    --color-primary-bg: 255 255 255;  /* white */
+    --color-secondary: 163 163 163;   /* neutral-400 */
+    --color-border: 229 229 229;      /* neutral-200 */
+    --color-button-bg: 23 23 23;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
-    --color-hover-bg: 245 245 245;   /* neutral-100 */
+    --color-hover-bg: 245 245 245;    /* neutral-100 */
+    --color-shine: 64 64 64;          /* neutral-700 */
 }
 
 /* DARK MODE */
@@ -28,6 +29,7 @@
     --color-button-bg: 250 250 250;  /* neutral-50 */
     --color-button-text: 23 23 23;   /* neutral-950 */
     --color-hover-bg: 38 38 38;      /* neutral-800 */
+    --color-shine: 229 229 229;      /* neutral-200 */
 }
 
 /* SYSTEM DETECTION */
@@ -177,10 +179,38 @@
         @apply transition-colors duration-300 ease-in-out;
         border-color: rgb(var(--color-border));
     }
+    /* SHIMMER EFFECTS */
+    .shimmer-text {
+        --shimmer-width: 200%;
+        position: relative;
+        color: rgb(var(--color-button-text));
+    }
 
-    .bg-gradient-overlay {
-        @apply transition-all duration-300 ease-in-out;
-        background: linear-gradient(180deg, rgb(var(--color-primary-bg)) 0%, rgb(var(--color-primary-bg)) 80%, transparent 100%);
+    .shimmer-text::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-clip: text;
+        background-repeat: no-repeat;
+        background-position: 200% 0;
+        background-size: var(--shimmer-width) 100%;
+        background-image: linear-gradient(
+            to right,
+            transparent,
+            rgb(var(--color-shine) / 80%),
+            transparent
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        pointer-events: none;
+        transition: background-position 1.2s ease-out;
+    }
+
+    .shimmer-text:hover::before {
+        background-position: -100% 0;
     }
 }
 
