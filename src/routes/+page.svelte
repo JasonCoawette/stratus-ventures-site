@@ -14,7 +14,7 @@
     <!-- CONTAINER -->
     <main class="
         flex flex-col justify-start items-center w-full h-fit 
-        gap-6 max-w-5xl pb-20
+        gap-6 max-w-5xl pb-20 sm:pb-16
     ">
 
         <!-- HERO -->

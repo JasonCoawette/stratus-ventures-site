@@ -3,7 +3,6 @@ import lineClamp from '@tailwindcss/line-clamp'
 
 const config: Config = {
   content: ['./src/**/*.{html,js,svelte,ts}'], // tell Tailwind what to scan
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {

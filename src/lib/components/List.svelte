@@ -6,7 +6,7 @@
         {name: "Arvis", tagline: "AR Heads-Up Display for Any Vehicle", link: "https://arvis.ai/"},
         {name: "Clovis", tagline: "AI Personal Financial and Budgeting assistant", link: "https://clovis.ai/"},
         {name: "Homer", tagline: "AI Home Operating System", link: "https://homer.ai/"},
-        {name: "Numa", tagline: "Biohack Your Genetics with AI", link: "https://numa.ai/"},
+        {name: "Numa", tagline: "AI Genetic Optimization Assistant", link: "https://numa.ai/"},
         {name: "Prodman", tagline: "AI Product Management Agent", link: "https://prodman.ai/"},
     ]
 

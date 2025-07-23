@@ -5,6 +5,46 @@
     --font-display: "Space Grotesk", system-ui, sans-serif;
 }
 
+/* CSS CUSTOM PROPERTIES FOR THEMING */
+/* --------------------------------- */
+
+/* LIGHT MODE */
+:root {
+    --color-primary: 23 23 23;      /* neutral-950 */
+    --color-primary-bg: 255 255 255; /* white */
+    --color-secondary: 163 163 163;  /* neutral-400 */
+    --color-border: 229 229 229;     /* neutral-200 */
+    --color-button-bg: 23 23 23;     /* neutral-950 */
+    --color-button-text: 255 255 255; /* white */
+    --color-hover-bg: 245 245 245;   /* neutral-50 */
+}
+
+/* DARK MODE */
+.dark {
+    --color-primary: 250 250 250;    /* neutral-50 */
+    --color-primary-bg: 23 23 23;    /* neutral-900 */
+    --color-secondary: 163 163 163;  /* neutral-600 */
+    --color-border: 64 64 64;        /* neutral-700 */
+    --color-button-bg: 250 250 250;  /* neutral-50 */
+    --color-button-text: 23 23 23;   /* neutral-950 */
+    --color-hover-bg: 38 38 38;      /* neutral-800 */
+}
+
+/* SYSTEM DETECTION */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+        --color-primary: 250 250 250;    /* neutral-50 */
+        --color-primary-bg: 23 23 23;    /* neutral-900 */
+        --color-secondary: 163 163 163;  /* neutral-600 */
+        --color-border: 64 64 64;        /* neutral-700 */
+        --color-button-bg: 250 250 250;  /* neutral-50 */
+        --color-button-text: 23 23 23;   /* neutral-950 */
+        --color-hover-bg: 38 38 38;      /* neutral-800 */
+    }
+}
+
+
+
 /* FONT STYLES ----- */
 /* ----------------- */
 
@@ -30,12 +70,18 @@
 }
 
 @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Space Grotesk';
     src: url('/fonts/SpaceGrotesk-Medium.woff') format('woff');
     font-weight: 500;
     font-display: swap;
 }
-
 
 /* TYPOGRAPHY STYLES */
 /* ----------------- */
@@ -46,23 +92,27 @@
     }
 
     .button-label {
-        @apply font-sans font-semibold text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans font-medium text-base leading-tight tracking-tight;
     }
 
     .span-title {
-        @apply font-sans font-medium text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans font-medium text-base leading-tight tracking-tight;
     }
 
     .span-tag {
-        @apply font-sans font-normal text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans font-normal text-base leading-tight tracking-tight;
     }
 
     .paragraph {
-        @apply font-sans font-normal text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans font-normal text-base leading-tight tracking-tight;
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+    
+    .disclaimer {
+        @apply font-sans font-normal text-base leading-tight tracking-tight;
     }
 }
 
@@ -94,7 +144,7 @@
 
 @layer components {
     .link-text {
-        @apply font-sans text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans text-base leading-tight tracking-tight;
         position: relative;
         display: inline-block;
         text-decoration: none;
@@ -118,44 +168,59 @@
     }
 }
 
+/* COMPONENT STYLES ---- */
+/* ----------------- */
+
 /* COLOR STYLES ---- */
 /* ----------------- */
 
 @layer components {
     .primary-fg {
-        @apply text-neutral-950 dark:text-neutral-50 fill-neutral-950 dark:fill-neutral-50;
+        @apply transition-colors duration-300 ease-in-out;
+        color: rgb(var(--color-primary));
+        fill: rgb(var(--color-primary));
     }
 
     .primary-bg {
-        @apply bg-white dark:bg-neutral-900;
+        @apply transition-colors duration-300 ease-in-out;
+        background-color: rgb(var(--color-primary-bg));
     }
 
     .secondary-fg {
-        @apply text-neutral-400 dark:text-neutral-300 fill-neutral-400 dark:fill-neutral-300;
+        @apply transition-colors duration-300 ease-in-out;
+        color: rgb(var(--color-secondary));
+        fill: rgb(var(--color-secondary));
     }
 
     .button-default {
-        @apply bg-neutral-950 dark:bg-neutral-50 hover:opacity-80 transition duration-300 ease-in-out;
-        @apply text-white dark:text-black;
+        @apply transition-all duration-300 ease-in-out;
+        background-color: rgb(var(--color-button-bg));
+        color: rgb(var(--color-button-text));
+    }
+
+    .button-default:hover {
+        opacity: 0.8;
     }
 
     .button-outlined {
-        @apply bg-transparent border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50/50 dark:hover:bg-neutral-800 transition duration-300 ease-in-out;
+        @apply transition-all duration-300 ease-in-out;
+        background-color: transparent;
+        border: 1px solid rgb(var(--color-border));
+    }
+
+    .button-outlined:hover {
+        background-color: rgb(var(--color-hover-bg) / 0.5);
     }
 
     .border-fg {
-        @apply border-neutral-200 dark:border-neutral-700;
+        @apply transition-colors duration-300 ease-in-out;
+        border-color: rgb(var(--color-border));
     }
 
     .bg-gradient-overlay {
-        background: linear-gradient(180deg, white 0%, white 80%, transparent 100%);
+        @apply transition-all duration-300 ease-in-out;
+        background: linear-gradient(180deg, rgb(var(--color-primary-bg)) 0%, rgb(var(--color-primary-bg)) 80%, transparent 100%);
     }
-
-    .dark .bg-gradient-overlay {
-        background: linear-gradient(180deg, rgb(23 23 23) 0%, rgb(23 23 23) 80%, transparent 100%);
-    }
-    
-
 }
 
 
