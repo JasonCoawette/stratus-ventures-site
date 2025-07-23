@@ -17,7 +17,8 @@
     --color-button-bg: 23 23 23;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
-    --color-shine: 64 64 64;          /* neutral-700 */
+    --color-shine: 64 64 64;      /* neutral-700 */
+
 }
 
 /* DARK MODE */
@@ -30,6 +31,7 @@
     --color-button-text: 23 23 23;   /* neutral-950 */
     --color-hover-bg: 38 38 38;      /* neutral-800 */
     --color-shine: 229 229 229;      /* neutral-200 */
+
 }
 
 /* SYSTEM DETECTION */
@@ -184,6 +186,10 @@
         --shimmer-width: 200%;
         position: relative;
         color: rgb(var(--color-button-text));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-smooth: never;
     }
 
     .shimmer-text::before {
@@ -200,13 +206,13 @@
         background-image: linear-gradient(
             to right,
             transparent,
-            rgb(var(--color-shine) / 80%),
+            rgb(var(--color-shine) / 80%) 50%,
             transparent
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         pointer-events: none;
-        transition: background-position 1.2s ease-out;
+        transition: background-position 1.2s ease-in-out;
     }
 
     .shimmer-text:hover::before {

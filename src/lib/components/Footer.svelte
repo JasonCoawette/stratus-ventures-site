@@ -31,7 +31,7 @@
 
 <footer class="
     flex flex-row justify-between items-center w-full h-fit
-    my-16 gap-4
+    mt-8 mb-16 gap-4
 ">
     <span class="disclaimer primary-fg opacity-40">
         © 2025 Stratus Ventures LLC

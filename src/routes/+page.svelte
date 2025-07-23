@@ -16,7 +16,7 @@
     ">
         <section class="
             flex flex-col sm:flex-row justify-start md:justify-center items-center w-full h-fit 
-            sm:gap-6 relative
+            sm:gap-6 relative mb-8
         ">
             <div class="
                 flex flex-col justify-start items-start w-full h-fit min-w-2xs
