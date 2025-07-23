@@ -1,23 +1,22 @@
 <script lang="ts">
-    // PROPS
+    interface ButtonProps {
+        label?: string;
+        variant?: "default" | "outlined";
+        href?: string | null;
+        onClick?: (() => void) | null;
+    }
+
     let { 
         label = "Button", 
         variant = "default", 
         href = null, 
         onClick = null 
-    }: {
-        label?: string;
-        variant?: "default" | "outlined";
-        href?: string | null;
-        onClick?: (() => void) | null;
-    } = $props();
+    }: ButtonProps = $props();
 
-    // BASE STYLE
     const baseStyle = "flex w-full sm:w-fit h-fit px-8 py-3 rounded-lg button-label items-center justify-center";
     
-    // VARIANT STYLES
     const variantMap: Record<"default" | "outlined", string> = {
-        default: "button-default",
+        default: "button-default hover:opacity-90",
         outlined: "button-outlined primary-fg",
     };
 
@@ -25,17 +24,11 @@
 </script>
 
 {#if href}
-    <!-- Render as <a> -->
-    <a 
-        href={href} 
-        class={finalClass}>
+    <a href={href} class={finalClass}>
         {label}
     </a>
 {:else}
-    <!-- Render as <button> -->
-    <button 
-        class={finalClass} 
-        onclick={onClick}>
-            {label}
+    <button class={finalClass} onclick={onClick}>
+        {label}
     </button>
 {/if}

@@ -16,7 +16,7 @@
     --color-border: 229 229 229;     /* neutral-200 */
     --color-button-bg: 23 23 23;     /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
-    --color-hover-bg: 245 245 245;   /* neutral-50 */
+    --color-hover-bg: 245 245 245;   /* neutral-100 */
 }
 
 /* DARK MODE */
@@ -43,10 +43,8 @@
     }
 }
 
-
-
-/* FONT STYLES ----- */
-/* ----------------- */
+/* FONT STYLES */
+/* ------------ */
 
 @font-face {
     font-family: 'Geist';
@@ -87,6 +85,11 @@
 /* ----------------- */
 
 @layer components {
+    /* Base text styles - consolidated */
+    .text-base-style {
+        @apply font-sans text-base leading-tight tracking-tight;
+    }
+
     .heading-1 {
         @apply font-display text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tight;
     }
@@ -105,44 +108,13 @@
 
     .paragraph {
         @apply font-sans font-normal text-base leading-tight tracking-tight;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
     
     .disclaimer {
-        @apply font-sans font-normal text-base leading-tight tracking-tight;
+        @apply font-sans font-normal text-sm leading-tight tracking-tight;
     }
-}
 
-/* LINK STYLES ----- */
-/* ----------------- */
-
-.link-underline {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-}
-    
-.link-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 1px;
-    width: 100%;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-    
-.link-underline:hover::after {
-    transform: scaleX(1);
-}
-
-@layer components {
+    /* LINK STYLES */
     .link-text {
         @apply font-sans text-base leading-tight tracking-tight;
         position: relative;
@@ -166,15 +138,8 @@
     .link-text:hover::after {
         transform: scaleX(1);
     }
-}
 
-/* COMPONENT STYLES ---- */
-/* ----------------- */
-
-/* COLOR STYLES ---- */
-/* ----------------- */
-
-@layer components {
+    /* COMPONENT STYLES */
     .primary-fg {
         @apply transition-colors duration-300 ease-in-out;
         color: rgb(var(--color-primary));
@@ -197,11 +162,7 @@
         background-color: rgb(var(--color-button-bg));
         color: rgb(var(--color-button-text));
     }
-
-    .button-default:hover {
-        opacity: 0.8;
-    }
-
+    
     .button-outlined {
         @apply transition-all duration-300 ease-in-out;
         background-color: transparent;
