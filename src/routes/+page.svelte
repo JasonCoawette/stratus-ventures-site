@@ -31,7 +31,7 @@
                 order-2 md:order-1
                 relative z-10 -mt-32 sm:mt-0
             ">
-                <h1 class="heading-1">Stratus</h1>
+                <h1 class="heading-1 primary-fg">Stratus</h1>
                 <p class="paragraph primary-fg">
                     Stratus Ventures LLC owns and leads a group of product-focused ventures founded by
                     <Link href="https://x.com/jasoncoawette" label="Jason Coawette"/>

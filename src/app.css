@@ -50,7 +50,7 @@
     }
 
     .span-title {
-        @apply font-sans font-semibold text-sm md:text-base leading-tight tracking-tight;
+        @apply font-sans font-medium text-sm md:text-base leading-tight tracking-tight;
     }
 
     .span-tag {
@@ -123,7 +123,7 @@
 
 @layer components {
     .primary-fg {
-        @apply text-neutral-950 dark:text-neutral-50;
+        @apply text-neutral-950 dark:text-neutral-50 fill-neutral-950 dark:fill-neutral-50;
     }
 
     .primary-bg {
@@ -148,12 +148,14 @@
     }
 
     .bg-gradient-overlay {
-        background: linear-gradient(180deg, var(--color-white) 0%, var(--color-white) 80%, transparent 100%);
+        background: linear-gradient(180deg, white 0%, white 80%, transparent 100%);
     }
 
     .dark .bg-gradient-overlay {
-        background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-neutral-900) 80%, transparent 100%);
+        background: linear-gradient(180deg, rgb(23 23 23) 0%, rgb(23 23 23) 80%, transparent 100%);
     }
+    
+
 }
 
 
