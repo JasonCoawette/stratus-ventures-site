@@ -39,12 +39,8 @@
       easing: cubicOut,
     });
     
-    // Debug logging
-    console.log(`NumberTicker value:`, value);
-    
     // Reactive statement to update animation when value changes
     $effect(() => {
-        console.log(`NumberTicker updating to:`, value);
         num.set(value);
     });
 </script>

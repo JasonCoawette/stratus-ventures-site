@@ -47,4 +47,4 @@
             {getDisplayName(name)}
         </Tooltip.Content>
     </Tooltip.Root>
-</Tooltip.Provider>  
+</Tooltip.Provider>

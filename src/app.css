@@ -203,11 +203,46 @@
     
     
     .tooltip {
-        @apply transition-all duration-300 ease-in-out;
+        @apply transition-all duration-200 ease-out;
         background-color: rgb(var(--color-button-bg));
         color: rgb(var(--color-button-text));
     }
     
+    /* Simple tooltip animations */
+    .tooltip[data-state="open"] {
+        animation: tooltip-enter 0.25s ease-out;
+    }
+    
+    .tooltip[data-state="closed"] {
+        animation: tooltip-exit 0.2s ease-out;
+    }
+    
+    @keyframes tooltip-enter {
+        0% {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+        50% {
+            opacity: 0.5;
+            transform: translateY(2px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes tooltip-exit {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+    }
+
     .button-text {
         color: rgb(var(--color-button-text));
     }
