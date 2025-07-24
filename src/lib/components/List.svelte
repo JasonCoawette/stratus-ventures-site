@@ -16,7 +16,7 @@
     ];
 </script>
 
-<ul class="flex flex-col w-full h-fit gap-0 border-b border-fg">
+<ul class="flex flex-col w-full h-fit gap-0 border-b border-fg sm:pt-4">
     {#each products as product}
         <li>
             <ListItem title={product.name} tagline={product.tagline} link={product.link}/>

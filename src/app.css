@@ -13,38 +13,42 @@
 :root {
     --color-primary: 23 23 23;        /* neutral-950 */
     --color-primary-bg: 255 255 255;  /* white */
-    --color-secondary: 163 163 163;   /* neutral-400 */
     --color-border: 229 229 229;      /* neutral-200 */
     --color-button-bg: 23 23 23;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
-    --color-shine: 64 64 64;      /* neutral-700 */
-
+    --color-shine: 64 64 64;          /* neutral-700 */
+    --color-primary-40: 23 23 23 / 40%; /* 40% opacity primary */
+    --color-skeleton: 245 245 245;
+    --color-button-hover: 64 64 64;   /* neutral-700 */
 }
 
 /* DARK MODE */
 .dark {
     --color-primary: 250 250 250;    /* neutral-50 */
     --color-primary-bg: 23 23 23;    /* neutral-900 */
-    --color-secondary: 163 163 163;  /* neutral-600 */
     --color-border: 64 64 64;        /* neutral-700 */
     --color-button-bg: 250 250 250;  /* neutral-50 */
     --color-button-text: 23 23 23;   /* neutral-950 */
     --color-hover-bg: 38 38 38;      /* neutral-800 */
     --color-shine: 229 229 229;      /* neutral-200 */
-
+    --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
+    --color-skeleton: 38 38 38;
+    --color-button-hover: 229 229 229; /* neutral-200 */
 }
 
-/* LIGHT MODE (manual override) */
+/* LIGHT MODE */
 .light {
     --color-primary: 23 23 23;        /* neutral-950 */
     --color-primary-bg: 255 255 255;  /* white */
-    --color-secondary: 163 163 163;   /* neutral-400 */
     --color-border: 229 229 229;      /* neutral-200 */
     --color-button-bg: 23 23 23;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
     --color-shine: 64 64 64;      /* neutral-700 */
+    --color-primary-40: 23 23 23 / 40%; /* 40% opacity primary */
+    --color-skeleton: 245 245 245;
+    --color-button-hover: 64 64 64;   /* neutral-700 */
 }
 
 /* SYSTEM DETECTION */
@@ -52,12 +56,14 @@
     :root:not(.light):not(.dark) {
         --color-primary: 250 250 250;    /* neutral-50 */
         --color-primary-bg: 23 23 23;    /* neutral-900 */
-        --color-secondary: 163 163 163;  /* neutral-600 */
         --color-border: 64 64 64;        /* neutral-700 */
         --color-button-bg: 250 250 250;  /* neutral-50 */
         --color-button-text: 23 23 23;   /* neutral-950 */
         --color-hover-bg: 38 38 38;      /* neutral-800 */
         --color-shine: 229 229 229;      /* neutral-200 */
+        --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
+        --color-skeleton: 38 38 38;
+        --color-button-hover: 229 229 229; /* neutral-200 */
     }
 }
 
@@ -129,13 +135,15 @@
 
     .span-tag {
         @apply font-sans font-normal text-base leading-tight tracking-tight;
+        color: rgb(var(--color-primary-40));
+        fill: rgb(var(--color-primary-40));
     }
 
     .paragraph {
         @apply font-sans font-normal text-base leading-tight tracking-tight;
     }
     
-    .disclaimer {
+    .span-small {
         @apply font-sans font-normal text-sm leading-tight tracking-tight;
     }
 
@@ -145,6 +153,7 @@
         position: relative;
         display: inline-block;
         text-decoration: none;
+        color: rgb(var(--color-primary));
     }
 
     .link-text::after {
@@ -178,14 +187,34 @@
 
     .secondary-fg {
         @apply transition-colors duration-300 ease-in-out;
-        color: rgb(var(--color-secondary));
-        fill: rgb(var(--color-secondary));
+        color: rgb(var(--color-primary-40));
+        fill: rgb(var(--color-primary-40));
     }
 
     .button-default {
         @apply transition-all duration-300 ease-in-out;
         background-color: rgb(var(--color-button-bg));
         color: rgb(var(--color-button-text));
+    }
+    
+    .button-default:hover {
+        background-color: rgb(var(--color-button-hover));
+    }
+    
+    
+    .tooltip {
+        @apply transition-all duration-300 ease-in-out;
+        background-color: rgb(var(--color-button-bg));
+        color: rgb(var(--color-button-text));
+    }
+    
+    .button-text {
+        color: rgb(var(--color-button-text));
+    }
+
+    .group:hover .group-hover\:primary-fg {
+        color: rgb(var(--color-primary));
+        fill: rgb(var(--color-primary));
     }
     
     .button-outlined {
@@ -195,7 +224,7 @@
     }
 
     .button-outlined:hover {
-        background-color: rgb(var(--color-hover-bg) / 0.5);
+        background-color: rgb(var(--color-hover-bg));
     }
 
     .border-fg {
@@ -233,11 +262,18 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         pointer-events: none;
-        transition: background-position 1.2s ease-in-out;
+        transition: background-position 1s ease-in-out;
     }
 
     .shimmer-text:hover::before {
         background-position: -100% 0;
+        background-color: rgb(var(--color-button-de))
+    }
+
+    .skeleton {
+        @apply transition duration-300 ease-out;
+        background-color: rgb(var(--color-skeleton));
+        fill: rgb(var(--color-skeleton))
     }
 }
 
