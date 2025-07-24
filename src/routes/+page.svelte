@@ -26,7 +26,7 @@
             <div class="
                 relative
                 flex flex-col justify-start items-start w-full h-fit min-w-2xs
-                lg:min-w-xl pt-4 sm:pt-0 gap-4 sm:gap-6 order-2 sm:order-1 pb-6 sm:pb-0
+                lg:min-w-xl pt-6 sm:pt-0 gap-4 sm:gap-6 order-2 sm:order-1 pb-6 sm:pb-0
             ">
                 <h1 class="heading-1 primary-fg">Stratus</h1>
                 <p class="paragraph primary-fg">

@@ -1,7 +1,7 @@
 <script lang="ts">
     import Icon from '$lib/components/Icons/Icon.svelte';
     import NumberTicker from './NumberTicker.svelte';
-    import * as Tooltip from "$lib/components/ui/tooltip";
+    import * as Tooltip from "$lib/components/tooltip";
 
     interface MetricProps {
         name: string;
@@ -21,8 +21,6 @@
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
-    // Debug logging
-    console.log(`Metric ${name}:`, data);
 </script>
 
 <Tooltip.Provider>
