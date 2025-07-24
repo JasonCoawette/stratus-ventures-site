@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+    --font-mono: "Geist-Mono", system-ui, sans-serif;
     --font-sans: "Geist", system-ui, sans-serif;
     --font-display: "Space Grotesk", system-ui, sans-serif;
 }
@@ -34,9 +35,21 @@
 
 }
 
+/* LIGHT MODE (manual override) */
+.light {
+    --color-primary: 23 23 23;        /* neutral-950 */
+    --color-primary-bg: 255 255 255;  /* white */
+    --color-secondary: 163 163 163;   /* neutral-400 */
+    --color-border: 229 229 229;      /* neutral-200 */
+    --color-button-bg: 23 23 23;      /* neutral-950 */
+    --color-button-text: 255 255 255; /* white */
+    --color-hover-bg: 245 245 245;    /* neutral-100 */
+    --color-shine: 64 64 64;      /* neutral-700 */
+}
+
 /* SYSTEM DETECTION */
 @media (prefers-color-scheme: dark) {
-    :root:not(.light) {
+    :root:not(.light):not(.dark) {
         --color-primary: 250 250 250;    /* neutral-50 */
         --color-primary-bg: 23 23 23;    /* neutral-900 */
         --color-secondary: 163 163 163;  /* neutral-600 */
@@ -44,11 +57,19 @@
         --color-button-bg: 250 250 250;  /* neutral-50 */
         --color-button-text: 23 23 23;   /* neutral-950 */
         --color-hover-bg: 38 38 38;      /* neutral-800 */
+        --color-shine: 229 229 229;      /* neutral-200 */
     }
 }
 
 /* FONT STYLES */
 /* ------------ */
+
+@font-face {
+    font-family: 'Geist-Mono';
+    src: url('/font/GeistMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
 
 @font-face {
     font-family: 'Geist';

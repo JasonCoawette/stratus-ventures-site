@@ -8,10 +8,12 @@
     onMount(() => {
         const theme = localStorage.getItem('theme') || 'system';
         if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('light');
             document.documentElement.classList.add('dark');
             isDark = true;
         } else {
             document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
             isDark = false;
         }
     });
@@ -20,10 +22,12 @@
         isDark = !isDark;
         
         if (isDark) {
+            document.documentElement.classList.remove('light');
             document.documentElement.classList.add('dark');
             localStorage.setItem('theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
             localStorage.setItem('theme', 'light');
         }
     }
@@ -39,7 +43,7 @@
     
     <div class="
         flex flex-row justify-end items-center w-fit h-fit
-        gap-4 md:gap-5
+        gap-4
     ">
         <button 
             on:click={toggleDarkMode} 

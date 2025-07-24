@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button from '$lib/components/Button.svelte';
-    import Globe from '$lib/components/Globe.svelte';
+    import Globe from '$lib/components/Globe/Globe.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import Link from '$lib/components/Link.svelte';
     import List from '$lib/components/List.svelte';
@@ -14,10 +14,13 @@
         flex flex-col justify-start items-center w-full h-fit 
         gap-6 max-w-5xl pb-20 sm:pb-16
     ">
-        <section class="
+        <!-- HERO SECTION -->
+        <section aria-label="hero section" class="
             flex flex-col sm:flex-row justify-start md:justify-center items-center w-full h-fit 
             sm:gap-6 relative mb-8
         ">
+
+            <!-- HEADING WRAPPER -->
             <div class="
                 flex flex-col justify-start items-start w-full h-fit min-w-2xs
                 lg:min-w-xl pt-4 sm:pt-0 gap-4 sm:gap-6 order-2 md:order-1
@@ -38,7 +41,10 @@
                 </div>
             </div>
 
-            <Globe />
+            <!-- GLOBE -->
+            <div class="flex w-full h-full max-w-sm aspect-square bg-neutral-100 order-1 sm:order-2">
+                <Globe />
+            </div>
         </section>
 
         <List />
