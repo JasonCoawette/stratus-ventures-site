@@ -31,7 +31,7 @@
                     onmouseenter={() => isIconHovered = true}
                     onmouseleave={() => isIconHovered = false}
                     ontouchstart={() => isIconHovered = true}
-                    ontouchend={() => isIconHovered = false}
+                    ontouchend={() => isIconHovered = true}
                 >
                     <Icon name={name} class="w-4 h-4 {isIconHovered ? 'primary-fg' : 'secondary-fg'}"/>
                 </div>
