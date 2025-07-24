@@ -11,43 +11,43 @@
 
 /* LIGHT MODE */
 :root {
-    --color-primary: 23 23 23;        /* neutral-950 */
+    --color-primary: 10 10 10;        /* neutral-950 */
     --color-primary-bg: 255 255 255;  /* white */
     --color-border: 229 229 229;      /* neutral-200 */
-    --color-button-bg: 23 23 23;      /* neutral-950 */
+    --color-button-bg: 10 10 10;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
     --color-shine: 64 64 64;          /* neutral-700 */
-    --color-primary-40: 23 23 23 / 40%; /* 40% opacity primary */
-    --color-skeleton: 245 245 245;
+    --color-primary-40: 10 10 10 / 40%; /* 40% opacity primary */
+    --color-skeleton: 245 245 245;    /* neutral-100 */
     --color-button-hover: 64 64 64;   /* neutral-700 */
 }
 
 /* DARK MODE */
 .dark {
     --color-primary: 250 250 250;    /* neutral-50 */
-    --color-primary-bg: 23 23 23;    /* neutral-900 */
-    --color-border: 64 64 64;        /* neutral-700 */
+    --color-primary-bg: 10 10 10;    /* neutral-950 */
+    --color-border: 38 38 38;        /* neutral-800 */
     --color-button-bg: 250 250 250;  /* neutral-50 */
-    --color-button-text: 23 23 23;   /* neutral-950 */
-    --color-hover-bg: 38 38 38;      /* neutral-800 */
+    --color-button-text: 10 10 10;   /* neutral-950 */
+    --color-hover-bg: 23 23 23;      /* neutral-900 */
     --color-shine: 229 229 229;      /* neutral-200 */
     --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
-    --color-skeleton: 38 38 38;
+    --color-skeleton: 23 23 23;      /* neutral-900 */
     --color-button-hover: 229 229 229; /* neutral-200 */
 }
 
 /* LIGHT MODE */
 .light {
-    --color-primary: 23 23 23;        /* neutral-950 */
+    --color-primary: 10 10 10;        /* neutral-950 */
     --color-primary-bg: 255 255 255;  /* white */
     --color-border: 229 229 229;      /* neutral-200 */
-    --color-button-bg: 23 23 23;      /* neutral-950 */
+    --color-button-bg: 10 10 10;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
-    --color-shine: 64 64 64;      /* neutral-700 */
-    --color-primary-40: 23 23 23 / 40%; /* 40% opacity primary */
-    --color-skeleton: 245 245 245;
+    --color-shine: 64 64 64;          /* neutral-700 */
+    --color-primary-40: 10 10 10 / 40%; /* 40% opacity primary */
+    --color-skeleton: 245 245 245;    /* neutral-100 */
     --color-button-hover: 64 64 64;   /* neutral-700 */
 }
 
@@ -55,14 +55,14 @@
 @media (prefers-color-scheme: dark) {
     :root:not(.light):not(.dark) {
         --color-primary: 250 250 250;    /* neutral-50 */
-        --color-primary-bg: 23 23 23;    /* neutral-900 */
-        --color-border: 64 64 64;        /* neutral-700 */
+        --color-primary-bg: 10 10 10;    /* neutral-950 */
+        --color-border: 38 38 38;      /* neutral-800 */
         --color-button-bg: 250 250 250;  /* neutral-50 */
-        --color-button-text: 23 23 23;   /* neutral-950 */
+        --color-button-text: 10 10 10;   /* neutral-950 */
         --color-hover-bg: 38 38 38;      /* neutral-800 */
         --color-shine: 229 229 229;      /* neutral-200 */
         --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
-        --color-skeleton: 38 38 38;
+        --color-skeleton: 38 38 38;      /* neutral-800 */
         --color-button-hover: 229 229 229; /* neutral-200 */
     }
 }
