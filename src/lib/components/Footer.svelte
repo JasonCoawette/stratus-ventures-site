@@ -1,6 +1,6 @@
 <script lang="ts">
     import Link from '$lib/components/Link.svelte';
-    import Icon from '$lib/components/Icons/Icon.svelte';
+    import Icon from '$lib/components/icons/Icon.svelte';
     import { onMount } from 'svelte';
     
     let isDark = false;

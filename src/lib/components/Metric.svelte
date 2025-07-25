@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Icon from '$lib/components/Icons/Icon.svelte';
+    import Icon from '$lib/components/icons/Icon.svelte';    
     import NumberTicker from './NumberTicker.svelte';
     import * as Tooltip from "$lib/components/tooltip";
 
@@ -41,15 +41,16 @@
 <Tooltip.Provider>
     <Tooltip.Root delayDuration={0}>
         <div class="inline-flex items-center justify-start gap-2 min-w-16">
-            <Tooltip.Trigger>
+            <Tooltip.Trigger
+                onmouseenter={() => isIconHovered = true}
+                onmouseleave={() => isIconHovered = false}
+                ontouchstart={handleTouchStart}
+                ontouchend={handleTouchEnd}
+            >
                 <div 
                     class="w-4 h-4 flex items-center justify-center cursor-pointer"
                     role="button"
                     tabindex="0"
-                    onmouseenter={() => isIconHovered = true}
-                    onmouseleave={() => isIconHovered = false}
-                    ontouchstart={handleTouchStart}
-                    ontouchend={handleTouchEnd}
                 >
                     <Icon name={name} class="w-4 h-4 {isIconHovered ? 'primary-fg' : 'secondary-fg'}"/>
                 </div>

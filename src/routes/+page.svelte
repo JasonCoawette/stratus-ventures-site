@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button from '$lib/components/Button.svelte';
-    import Globe from '$lib/components/Globe/Globe.svelte';
+    import Globe from '$lib/components/globe/Globe.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import Link from '$lib/components/Link.svelte';
     import List from '$lib/components/List.svelte';

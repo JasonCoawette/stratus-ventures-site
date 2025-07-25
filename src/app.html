@@ -2,10 +2,29 @@
 <html lang="en" class="min-w-[360px] primary-bg">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+		<title>Stratus Ventures LLC</title>
+		<meta name="description" content="Stratus Ventures LLC owns a group of product-focused ventures founded by Jason Coawette and is located in Phoenix, Arizona." />
+		
+		<!-- Favicon -->
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />	
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Stratus Ventures LLC" />
+		<meta name="twitter:description" content="Stratus Ventures LLC owns a group of product-focused ventures founded by Jason Coawette and is located in Phoenix, Arizona." />
+		<meta name="twitter:image" content="https://stratus-ventures.org/social/banner.png" />
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content="Stratus Ventures LLC" />
+		<meta property="og:description" content="Stratus Ventures LLC owns a group of product-focused ventures founded by Jason Coawette and is located in Phoenix, Arizona." />
+		<meta property="og:image" content="https://stratus-ventures.org/social/banner.png" />
+		<meta property="og:url" content="https://stratus-ventures.org" />
+		<meta property="og:type" content="website" />
+		
 		<script>
-			// Prevent flash of incorrect theme
 			const theme = localStorage.getItem('theme') || 'system';
 			const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 			if (isDark) {
@@ -14,6 +33,7 @@
 				document.documentElement.classList.remove('dark');
 			}
 		</script>
+	
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="antialiased select-none">
