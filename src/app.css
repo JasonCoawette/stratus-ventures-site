@@ -17,7 +17,7 @@
     --color-button-bg: 10 10 10;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
-    --color-shine: 64 64 64;          /* neutral-700 */
+    --color-shine: 255 255 255;       /* brighter shine */
     --color-primary-40: 10 10 10 / 40%; /* 40% opacity primary */
     --color-skeleton: 245 245 245;    /* neutral-100 */
     --color-button-hover: 64 64 64;   /* neutral-700 */
@@ -31,7 +31,7 @@
     --color-button-bg: 250 250 250;  /* neutral-50 */
     --color-button-text: 10 10 10;   /* neutral-950 */
     --color-hover-bg: 23 23 23;      /* neutral-900 */
-    --color-shine: 229 229 229;      /* neutral-200 */
+    --color-shine: 255 255 255;      /* brighter shine */
     --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
     --color-skeleton: 23 23 23;      /* neutral-900 */
     --color-button-hover: 229 229 229; /* neutral-200 */
@@ -45,7 +45,7 @@
     --color-button-bg: 10 10 10;      /* neutral-950 */
     --color-button-text: 255 255 255; /* white */
     --color-hover-bg: 245 245 245;    /* neutral-100 */
-    --color-shine: 64 64 64;          /* neutral-700 */
+    --color-shine: 255 255 255;       /* brighter shine */
     --color-primary-40: 10 10 10 / 40%; /* 40% opacity primary */
     --color-skeleton: 245 245 245;    /* neutral-100 */
     --color-button-hover: 64 64 64;   /* neutral-700 */
@@ -60,7 +60,7 @@
         --color-button-bg: 250 250 250;  /* neutral-50 */
         --color-button-text: 10 10 10;   /* neutral-950 */
         --color-hover-bg: 38 38 38;      /* neutral-800 */
-        --color-shine: 229 229 229;      /* neutral-200 */
+        --color-shine: 255 255 255;      /* brighter shine */
         --color-primary-40: 250 250 250 / 40%; /* 40% opacity primary */
         --color-skeleton: 38 38 38;      /* neutral-800 */
         --color-button-hover: 229 229 229; /* neutral-200 */
@@ -198,7 +198,7 @@
     }
     
     .button-default:hover {
-        background-color: rgb(var(--color-button-hover));
+        /* background-color: rgb(var(--color-button-hover)); */
     }
     
     
@@ -270,11 +270,16 @@
     .shimmer-text {
         --shimmer-width: 200%;
         position: relative;
-        color: rgb(var(--color-button-text));
+        color: rgb(var(--color-button-text)); /* Start at full opacity (white) */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
         font-smooth: never;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .shimmer-text:hover {
+        color: rgb(var(--color-button-text) / 50%); /* Go to 50% opacity on hover */
     }
 
     .shimmer-text::before {
@@ -290,19 +295,29 @@
         background-size: var(--shimmer-width) 100%;
         background-image: linear-gradient(
             to right,
-            transparent,
-            rgb(var(--color-shine) / 80%) 50%,
-            transparent
+            transparent 0%,
+            rgb(var(--color-button-text) / 0%) 20%,
+            rgb(var(--color-button-text) / 100%) 50%,
+            rgb(var(--color-button-text) / 0%) 80%,
+            transparent 100%
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         pointer-events: none;
-        transition: background-position 1s ease-in-out;
+        /* Remove transition, use animation instead */
     }
 
     .shimmer-text:hover::before {
-        background-position: -100% 0;
-        background-color: rgb(var(--color-button-de))
+        animation: shimmer 2.5s cubic-bezier(.4,0,.2,1) infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
     }
 
     .skeleton {

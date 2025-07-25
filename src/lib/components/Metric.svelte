@@ -14,9 +14,27 @@
     }: MetricProps = $props();
 
     let isIconHovered = $state(false);
+    let touchTimeout: number;
 
     function getDisplayName(name: string): string {
         return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    function handleTouchStart(event: TouchEvent) {
+        event.preventDefault();
+        isIconHovered = true;
+        // Clear any existing timeout
+        if (touchTimeout) {
+            clearTimeout(touchTimeout);
+        }
+    }
+
+    function handleTouchEnd(event: TouchEvent) {
+        event.preventDefault();
+        // Add a small delay before hiding to allow tooltip to show
+        touchTimeout = setTimeout(() => {
+            isIconHovered = false;
+        }, 1000);
     }
 </script>
 
@@ -30,8 +48,8 @@
                     tabindex="0"
                     onmouseenter={() => isIconHovered = true}
                     onmouseleave={() => isIconHovered = false}
-                    ontouchstart={() => isIconHovered = true}
-                    ontouchend={() => isIconHovered = true}
+                    ontouchstart={handleTouchStart}
+                    ontouchend={handleTouchEnd}
                 >
                     <Icon name={name} class="w-4 h-4 {isIconHovered ? 'primary-fg' : 'secondary-fg'}"/>
                 </div>

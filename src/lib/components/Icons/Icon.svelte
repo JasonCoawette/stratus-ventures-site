@@ -17,11 +17,18 @@
         size = 16,
         class: className = ""
     }: IconProps = $props();
+
+    let isHovered = $state(false);
 </script>
 
 <div 
-    class="flex items-center justify-center transition-opacity duration-300 ease-in-out opacity-40 hover:opacity-100 {className}"
+    
+    class="flex items-center justify-center transition-opacity duration-300 ease-in-out {isHovered ? 'opacity-100' : 'opacity-40'} {className}"
     style={className.includes('w-') ? '' : `width: ${size}px; height: ${size}px;`}
+    onmouseenter={() => isHovered = true}
+    onmouseleave={() => isHovered = false}
+    role="img"
+    aria-label="Icon"
 >
     {#if name === "mail"}
         <Send {size} class="w-full h-full" />
