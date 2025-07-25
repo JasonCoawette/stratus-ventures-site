@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="min-w-[360px] primary-bg">
+<html lang="en" class="min-w-[360px]">
 	<head>
 		<meta charset="utf-8" />
 		<title>Stratus - AI Software Products</title>
@@ -45,14 +45,19 @@
 			}
 		</script>
 		
+		<!-- Theme script - runs immediately to prevent flash -->
 		<script>
-			const theme = localStorage.getItem('theme') || 'system';
-			const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-			if (isDark) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
+			(function() {
+				const theme = localStorage.getItem('theme') || 'system';
+				const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				if (isDark) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+				// Add the primary-bg class after theme is set
+				document.documentElement.classList.add('primary-bg');
+			})();
 		</script>
 	
 		%sveltekit.head%
