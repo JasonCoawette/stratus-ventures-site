@@ -10,7 +10,7 @@
     // FETCHERS FOR METRIC DATA
     async function fetchUsers() {
         try {
-            const response = await fetch('/api/metrics/users');
+            const response = await fetch('/api/metrics/total-users');
             const data = await response.json();
             users = data.count || 0;
         } catch (error) {
@@ -20,7 +20,7 @@
 
     async function fetchDownloads() {
         try {
-            const response = await fetch('/api/metrics/downloads');
+            const response = await fetch('/api/metrics/total-downloads');
             const data = await response.json();
             downloads = data.count || 0;
         } catch (error) {
@@ -30,7 +30,7 @@
 
     async function fetchSubscriptions() {
         try {
-            const response = await fetch('/api/metrics/subscriptions');
+            const response = await fetch('/api/metrics/total-subscriptions');
             const data = await response.json();
             subscriptions = data.count || 0;
         } catch (error) {
